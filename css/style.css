@@ -1,0 +1,548 @@
+/*
+
+Stylesheet Info:   Written by Stephen Greig for use on the iProspect 'Quiz' project template
+
+---------------------------
+Contents:
+---------------------------
+(1) Generals/Defaults
+(2) Header
+(3) Main
+     - (3a) Intro box
+     - (3b) Picture Quiz
+     - (3c) Text Quiz
+(4) Footer
+(5) Score Overlay
+(6) Media Queries
+---------------------------
+
+*/
+
+
+@import "reset.css";
+
+
+/* ------------------------------------------------
+------- 1) Generals/Defaults
+------------------------------------------------ */
+
+@font-face {
+    font-family: 'museo300';
+    src: url('../fonts/museo300/Museo300-Regular-webfont.eot');
+    src: url('../fonts/museo300/Museo300-Regular-webfont.eot?#iefix') format('eot'),
+         url('../fonts/museo300/Museo300-Regular-webfont.woff') format('woff'),
+         url('../fonts/museo300/Museo300-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo300/Museo300-Regular-webfont.svg#webfontOxG26Ljr') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo500';
+    src: url('../fonts/museo500/Museo500-Regular-webfont.eot');
+    src: url('../fonts/museo500/Museo500-Regular-webfont.eot?#iefix') format('eot'),
+         url('../fonts/museo500/Museo500-Regular-webfont.woff') format('woff'),
+         url('../fonts/museo500/Museo500-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo500/Museo500-Regular-webfont.svg#webfontOxG26Ljr') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo900';
+    src: url('../fonts/museo900/Museo900-Regular-webfont.eot');
+    src: url('../fonts/museo900/Museo900-Regular-webfont.eot?#iefix') format('eot'),
+         url('../fonts/museo900/Museo900-Regular-webfont.woff') format('woff'),
+         url('../fonts/museo900/Museo900-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/museo900/Museo900-Regular-webfont.svg#webfontOxG26Ljr') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-color: #6895cc;
+	background-size: cover;
+	font: 95% Arial;
+	overflow: hidden;
+}
+
+a, a img {
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+a:hover img {
+	opacity: .8;
+}
+
+img {
+	max-width: 100%;
+}
+
+.clearfix {
+	clear: both;
+	display: block;
+}
+
+small {
+	font-size: 70%;
+}
+
+.wrap {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+	.wrap > * {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 980px;
+		padding: 0 20px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+
+
+/* ------------------------------------------------
+------- 2) Header
+------------------------------------------------ */
+.header-wrap {
+	background: rgba(250, 250, 250, .8);
+}
+
+	header {
+		text-align: center;
+	}
+
+		header .social {
+			margin: 10px auto;
+			text-align: center;
+			width: 200px;
+		}
+
+			header .tweet {
+				margin: 10px 0 10px 30px;
+			}
+
+			header .gp {
+				margin: 10px 0 0 35px;
+			}
+
+			header .embed {
+				position: relative;
+			}
+
+			header .embed p {
+				font: .8em museo300;
+				color: #fff;
+				padding: 7px 20px;
+				background: #333;
+				border-radius: 5px;
+				cursor: pointer;
+				display: inline-block;
+				margin-bottom: 20px;
+			}
+
+			header .embed p:hover {
+				background: #222;
+			}
+
+			header .embed textarea {
+				position: absolute;
+				top: 40px;
+				left: 50%;
+				margin-left: -160px;
+				width: 280px;
+				min-height: 125px;
+				padding: 20px;
+				border-radius: 10px;
+				border: 1px solid #ccc;
+				display: none;
+			}
+
+
+
+/* ------------------------------------------------
+------- 3) Main
+------------------------------------------------ */
+/* 3a) Intro box */
+.intro {
+	width: 84%;
+	padding: 3% 8%;
+	background: rgba(250, 250, 250, .5);
+	color: #333;
+	text-align: center;
+	margin: 20px 0 40px;
+	font: 1.1em/1.3em museo300;
+}
+
+/* 3b) Picture Quiz */
+.quiz-pics {
+	width: 100%;
+}
+
+	.quiz-pics figure {
+		margin: 0 auto 40px;
+		width: 100%;
+		position: relative;
+	}
+
+		.num {
+			position: absolute;
+			top: -10px;
+			left: -10px;
+			width: 53px;
+			height: 47px;
+			padding-top: 6px;
+			border-radius: 50%;
+			background: #d70506;
+			color: #fff;
+			text-align: center;
+			font: 2.3em museo300;
+		}
+
+		.quiz-pics img {
+			border: 8px solid #fff;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+			margin-bottom: 8px;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			border-radius: 10px;
+			padding: 5px 35px 5px 10px;
+			border: 1px solid #76797d;
+			box-shadow: inset 0 0 12px rgba(0, 0, 0, .3);
+			color: #666;
+			font: 1.2em museo300;
+			background: #fff;
+		}
+
+		.main input[disabled] {
+			background-color: #e8ffd4;
+			opacity: 1;
+		}
+
+		.quiz-pics input[type="text"]:nth-of-type(2) {
+			margin-top: 5px;
+		}
+
+		input[type="text"]:focus {
+			border: 1px solid #59a7fa;
+			outline: none;
+		}
+
+		input.right {
+			background: url(../images/tick.png) right no-repeat #fff;
+		}
+
+		input.wrong {
+			background: url(../images/cross.png) right no-repeat #fff;
+		}
+
+
+/* 3c) Text/Trivia Quiz */
+.quiz-text {
+	width: 100%;
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+	.quiz-text > li {
+		width: 100%;
+		position: relative;
+		margin-bottom: 30px;
+	}
+
+		.quiz-text .q {
+			width: 100%;
+			padding: 20px;
+			padding-left: 55px;
+			background: rgba(206, 209, 116, .95);
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-bottom: 8px;
+			color: #232323;
+			font: 1.4em museo300;
+		}
+
+
+
+/* ------------------------------------------------
+------- 4) Footer
+------------------------------------------------ */
+.footer-wrap {
+	background: rgba(31, 31, 31, .95);
+	margin-bottom: 0;
+	bottom: 0;
+}
+
+	footer {
+		position: relative;
+		min-height: 60px;
+	}
+
+	footer .lights {
+		display: none;
+	}
+
+	footer .score {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		color: #fff;
+		font: 1.2em museo300;
+		background: #292929;
+		background: -webkit-linear-gradient(#292929, #151515);
+		padding: 10px 20px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border: 1px solid #333;
+		border-bottom: none;
+		min-width: 150px;
+		margin-left: -95px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+		cursor: pointer;
+	}
+
+	footer .score:hover {
+		background: -webkit-linear-gradient(#222, #111);
+	}
+
+		footer .nums {
+			float: left;
+			font: 2.3em museo900;
+			margin-right: 10px;
+		}
+
+			footer .nums .total {
+				font: .7em museo500;
+			}
+
+		footer .txt {
+			color: #777;
+			text-transform: uppercase;
+			text-align: center;
+			width: 80px;
+			float: left;
+		}
+
+			footer .txt span {
+				font-size: .7em;
+			}
+
+
+
+/* ------------------------------------------------
+------- 5) Score Overlay
+------------------------------------------------ */
+.score-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #333;
+	background: rgba(0, 0, 0, .88);
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding-top: 100px;
+	font: 1.2em museo300;
+	display: none;
+}
+
+	.score-overlay .score {
+		font: 5.5em museo900;
+	}
+
+	.score-overlay .completed {
+		font: 2.5em museo900;
+		display: block;
+		margin-bottom: 15px;
+	}
+
+	.score-overlay .social {
+		margin: 30px auto;
+		text-align: center;
+		width: 200px;
+	}
+
+	.score-overlay .tweet {
+		margin: 10px 0 0 30px;
+	}
+
+	.score-overlay .gp {
+		margin: 10px 0 0 35px;
+	}
+
+	.score-overlay .close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+	}
+
+	.score-overlay .close:hover {
+		opacity: .8;
+	}
+
+
+
+/* ------------------------------------------------
+------- 6) Media Queries
+------------------------------------------------ */
+@media screen and (min-width:366px) {
+
+	.quiz-pics figure {
+		width: 310px;
+	}
+
+}
+
+@media screen and (min-width:550px) {
+
+	body {
+		background: url(../images/body-bg.jpg) fixed no-repeat #6895cc;
+		background-size: cover;
+	}
+
+	header .logo {
+		float: left;
+	}
+
+	header .social {
+		float: right;
+		padding-top: 40px;
+		width: 330px;
+		margin: 0;
+	}
+
+		header .social > * {
+			float: right;
+		}
+
+		header .social br {
+			display: none;
+		}
+
+		header .fb-like {
+			margin-right: 20px;
+		}
+
+		header .tweet {
+			margin: 1px 0 0 0;
+		}
+
+		header .gp {
+			margin: 0;
+		}
+
+		header .embed {
+			float: right;
+			margin: 10px 40px 0 40px;
+		}
+
+			header .embed textarea {
+				right: -30px;
+				left: auto;
+			}
+
+	.quiz-pics figure {
+		width: 48.5%;
+		margin-right: 3%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 0; }
+
+	footer .score {
+		left: auto;
+		right: 20px;
+		margin-left: auto;
+	}
+
+}
+
+@media screen and (min-width:685px) {
+
+	body {
+		padding-bottom: 70px;
+	}
+
+	header .embed {
+		float: right;
+		margin-top: 36px;
+		margin-left: 40px;
+	}
+
+		header .embed textarea {
+			right: auto;
+			left: 50%;
+		}
+
+	.quiz-pics figure {
+		width: 31.5%;
+		margin-right: 2.75%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 2.75%; }
+	.quiz-pics figure:nth-of-type(3n) { margin-right: 0; }
+
+	.intro {
+		font-size: 1.2em;
+	}
+
+	.footer-wrap {
+		position: fixed;
+	}
+
+	footer .lights {
+		float: left;
+		min-width: 500px;
+		display: block;
+	}
+
+	footer .lights.hide {
+		display: none;
+	}
+
+		.lights li {
+			width: 21px;
+			height: 21px;
+			border-radius: 50%;
+			background: #cd2928;
+			float: left;
+			margin: 20px 5px 0;
+			box-shadow: inset 1px 1px 0 #000;
+		}
+
+		.lights .y {
+			background: #6cda2a;
+		}
+
+}
+
+@media screen and (min-width:800px) {
+
+	.quiz-pics figure {
+		width: 23.5%;
+		margin-right: 2%;
+		float: left;
+	}
+
+	.quiz-pics figure:nth-of-type(2n) { margin-right: 2%; }
+	.quiz-pics figure:nth-of-type(3n) { margin-right: 2%; }
+	.quiz-pics figure:nth-of-type(4n) { margin-right: 0; }
+
+}
